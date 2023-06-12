@@ -1,6 +1,7 @@
 package com.example.foodorderapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.GranularRoundedCorners;
+import com.example.foodorderapp.Activity.DetailActivity;
 import com.example.foodorderapp.Domain.FoodDomain;
 import com.example.foodorderapp.R;
 
@@ -35,6 +37,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        FoodDomain item = items.get(position);
         holder.title.setText(items.get(position).getTitle());
         holder.time.setText(items.get(position).getTime() + " min");
         holder.score.setText("" + items.get(position).getScore());
@@ -44,6 +47,15 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
                 .load(drawableResourceId)
                 .transform(new GranularRoundedCorners(30, 30, 0, 0))
                 .into(holder.pic);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), DetailActivity.class);
+                intent.putExtra("object", item);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

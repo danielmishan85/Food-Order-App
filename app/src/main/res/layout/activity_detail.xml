@@ -109,7 +109,7 @@
                             app:srcCompat="@drawable/time" />
 
                         <TextView
-                            android:id="@+id/textView15"
+                            android:id="@+id/detail_timeTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
@@ -126,9 +126,9 @@
                             android:layout_margin="8dp"
                             android:text="Delivery"
                             android:textColor="@color/black"
-                            app:layout_constraintEnd_toEndOf="@+id/textView15"
+                            app:layout_constraintEnd_toEndOf="@+id/detail_timeTxt"
                             app:layout_constraintStart_toStartOf="@+id/imageView10"
-                            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+                            app:layout_constraintTop_toBottomOf="@+id/detail_timeTxt" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <View
@@ -154,7 +154,7 @@
                             app:srcCompat="@drawable/star" />
 
                         <TextView
-                            android:id="@+id/textView15"
+                            android:id="@+id/detail_scoreTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
@@ -171,9 +171,9 @@
                             android:layout_margin="8dp"
                             android:text="Rating"
                             android:textColor="@color/black"
-                            app:layout_constraintEnd_toEndOf="@+id/textView15"
+                            app:layout_constraintEnd_toEndOf="@+id/detail_scoreTxt"
                             app:layout_constraintStart_toStartOf="@+id/imageView10"
-                            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+                            app:layout_constraintTop_toBottomOf="@+id/detail_scoreTxt" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <View
@@ -199,7 +199,7 @@
                             app:srcCompat="@drawable/flame" />
 
                         <TextView
-                            android:id="@+id/textView15"
+                            android:id="@+id/detail_energyTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
@@ -216,9 +216,9 @@
                             android:layout_margin="8dp"
                             android:text="Energy"
                             android:textColor="@color/black"
-                            app:layout_constraintEnd_toEndOf="@+id/textView15"
+                            app:layout_constraintEnd_toEndOf="@+id/detail_energyTxt"
                             app:layout_constraintStart_toStartOf="@+id/imageView10"
-                            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+                            app:layout_constraintTop_toBottomOf="@+id/detail_energyTxt" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
