@@ -2,11 +2,13 @@ package com.example.foodorderapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -19,7 +21,7 @@ import com.example.foodorderapp.R;
 public class DetailActivity extends AppCompatActivity {
     private Button addToCartBtn;
     private TextView title, price, description, numberOrder, time, score, energy, plusBtn, minusBtn;
-    private ImageView pic;
+    private ImageView pic, backBtn;
     private FoodDomain object;
     private int amount = 1;
     private ManagementCart managementCart;
@@ -34,6 +36,15 @@ public class DetailActivity extends AppCompatActivity {
 
         initView();
         getBundle();
+        bottomNavigation();
+    }
+
+    private void bottomNavigation() {
+        LinearLayout homeBtn = findViewById(R.id.detail_homeBtn);
+        LinearLayout cartBtn = findViewById(R.id.detail_cartBtn);
+
+        homeBtn.setOnClickListener(v -> startActivity(new Intent(DetailActivity.this, MainActivity.class)));
+        cartBtn.setOnClickListener(v -> startActivity(new Intent(DetailActivity.this, CartActivity.class)));
     }
 
     private void getBundle() {
@@ -68,6 +79,7 @@ public class DetailActivity extends AppCompatActivity {
             object.setNumberInCart(amount);
             managementCart.insertFood(object);
         });
+        backBtn.setOnClickListener(v -> finish());
     }
 
     private void initView() {
@@ -82,5 +94,6 @@ public class DetailActivity extends AppCompatActivity {
         plusBtn = findViewById(R.id.detail_plusCartBtn);
         minusBtn = findViewById(R.id.detail_minusCartBtn);
         pic = findViewById(R.id.detail_foodPic);
+        backBtn = findViewById(R.id.detail_backBtn);
     }
 }
